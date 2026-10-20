@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shafee Rahman | Business &amp; Future of Work Portfolio</title>
+<style>
+:root{
+  --orange:#f97316; --orange2:#ea580c; --ink:#111827; --muted:#5f6876;
+  --cream:#fff8f1; --white:#ffffff; --line:#e8e8e8; --dark:#171717;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.65}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--orange);outline-offset:4px;border-radius:5px}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.nav-inner{max-width:1180px;margin:auto;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;text-decoration:none;font-size:1.1rem}.logo span{color:var(--orange)}
+.links{display:flex;gap:22px;flex-wrap:wrap}.links a{text-decoration:none;font-size:.92rem;font-weight:700}.links a:hover{color:var(--orange2)}
+section{scroll-margin-top:80px}
+.wrap{max-width:1180px;margin:auto;padding:90px 24px}
+.hero{background:linear-gradient(120deg,#fff 55%,var(--cream) 55%);min-height:86vh;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}
+.kicker{font-size:.78rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--orange2)}
+h1{font-size:clamp(3.4rem,8vw,7rem);line-height:.92;letter-spacing:-.065em;margin:12px 0 24px}
+h1 span{color:var(--orange)}
+.hero p{font-size:1.18rem;max-width:700px;color:var(--muted)}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-block;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:800;border:2px solid var(--orange)}
+.primary{background:var(--orange);color:#fff}.secondary{color:var(--orange2);background:#fff}
+.stat-box{background:var(--dark);color:#fff;border-radius:22px;padding:32px;box-shadow:0 25px 55px rgba(0,0,0,.13)}
+.stat{padding:20px 0;border-bottom:1px solid #383838}.stat:last-child{border:0}
+.stat strong{display:block;font-size:1.8rem;color:#ff9a51}.stat span{color:#d6d6d6}
+.section-head{max-width:720px;margin-bottom:38px}
+h2{font-size:clamp(2.3rem,5vw,4rem);letter-spacing:-.045em;line-height:1;margin:8px 0 16px}
+.section-head p{color:var(--muted);font-size:1.05rem}
+.about{background:var(--dark);color:#fff}
+.about .section-head p,.about .body-text{color:#cfcfcf}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.body-text{font-size:1.08rem}
+.highlight{border-left:5px solid var(--orange);padding-left:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{border:1px solid var(--line);border-radius:18px;padding:26px;background:#fff;box-shadow:0 8px 28px rgba(0,0,0,.045)}
+.card .num{font-size:.8rem;font-weight:900;color:var(--orange2);letter-spacing:.1em}
+.card h3{font-size:1.35rem;line-height:1.2;margin:10px 0}
+.card p{color:var(--muted)}
+.projects{background:var(--cream)}
+.project{background:#fff;border-radius:20px;padding:30px;border:1px solid #f0dfd1;position:relative;overflow:hidden}
+.project:before{content:"";position:absolute;left:0;top:0;width:7px;height:100%;background:var(--orange)}
+.tag{display:inline-block;font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;background:#fff0e4;color:#b94700;padding:5px 9px;border-radius:999px}
+.project h3{font-size:1.5rem;margin:14px 0 8px}
+.project p{color:var(--muted)}
+.project-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{padding:20px;border:1px solid var(--line);border-radius:14px;font-weight:800;background:#fff}
+.skill small{display:block;color:var(--muted);font-weight:500;margin-top:5px}
+.timeline{border-left:3px solid var(--orange);padding-left:28px}
+.time-item{margin-bottom:34px}.time-item h3{margin:4px 0}.time-item p{margin:5px 0;color:var(--muted)}
+.contact{background:var(--orange);color:#fff;text-align:center}
+.contact .wrap{max-width:800px}.contact h2{font-size:clamp(2.6rem,6vw,5rem)}
+.contact p{font-size:1.1rem}.contact-note{background:rgba(255,255,255,.14);padding:18px;border-radius:12px;margin-top:24px}
+footer{background:#0e0e0e;color:#aaa;text-align:center;padding:25px}
+@media(max-width:850px){
+ .hero-grid,.about-grid{grid-template-columns:1fr}.hero{background:var(--cream)}.cards{grid-template-columns:1fr}
+ .project-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:repeat(2,1fr)}
+ .links{gap:12px}.nav-inner{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:520px){.skills-grid{grid-template-columns:1fr}.wrap{padding:65px 18px}.links{font-size:.86rem}}
+
+/* Accessible expandable project descriptions */
+details{margin-top:18px;border-top:1px solid #e9e9e9;padding-top:12px}summary{font-weight:800;color:#b94700;cursor:pointer}details p{margin:12px 0}summary:focus-visible{outline:3px solid #f97316;outline-offset:4px}
+</style>
+</head>
+<body>
+<nav>
+<div class="nav-inner">
+<a class="logo" href="#home">SHAFEE<span>.</span></a>
+<div class="links">
+<a href="#about">About</a><a href="#education">Education</a><a href="#projects">Projects</a>
+<a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-grid">
+<div>
+<div class="kicker">Business • Finance • Leadership</div>
+<h1>Shafee<br/><span>Rahman.</span></h1>
+<p>Business Administration student at California State University, Fullerton with interests in finance, banking, management, leadership, and the changing future of work.</p>
+<div class="buttons">
+<a class="btn primary" href="#projects">View My Projects</a>
+<a class="btn secondary" href="#about">About Me</a>
+</div>
+</div>
+<aside aria-label="Profile highlights" class="stat-box">
+<div class="stat"><strong>CSUF</strong><span>Business Administration</span></div>
+<div class="stat"><strong>Business</strong><span>Business Administration studies</span></div>
+<div class="stat"><strong>NCAS</strong><span>NASA NCAS certificate</span></div>
+<div class="stat"><strong>Finance + Management</strong><span>Core professional interests</span></div>
+</aside>
+</div>
+</section>
+<section class="about" id="about">
+<div class="wrap">
+<div class="section-head"><div class="kicker">About Me</div><h2>Building toward a career in business.</h2></div>
+<div class="about-grid">
+<p class="body-text">I am a Business Administration student at Cal State Fullerton after transferring from Fullerton College. My interests include finance, banking, business management, leadership, entrepreneurship, technology, and understanding how organizations make better decisions.</p>
+<p class="body-text highlight">I enjoy working with others, solving problems, learning new things, and understanding different perspectives. I work best in teams where people communicate openly, respect each other's ideas, and take responsibility for their work.</p>
+</div>
+</div>
+</section>
+<section id="education">
+<div class="wrap">
+<div class="section-head"><div class="kicker">Education</div><h2>Academic foundation</h2><p>My education has combined business, finance, economics, teamwork, analysis, and practical class projects.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01</div><h3>California State University, Fullerton</h3><p>Business Administration student. Current interests include management, finance, leadership, and business strategy.</p></article>
+<article class="card"><div class="num">02</div><h3>Fullerton College</h3><p>Transferred to CSUF after studying subjects including accounting, business, economics, and finance.</p></article>
+<article class="card"><div class="num">03</div><h3>NASA NCAS</h3><p>Earned a NASA NCAS certificate, reflecting participation in an academic learning opportunity.</p></article>
+</div>
+</div>
+</section>
+<section class="projects" id="projects">
+<div class="wrap">
+<div class="section-head"><div class="kicker">Selected Work</div><h2>Projects</h2><p>A selection of class projects that reflect my experience with research, analysis, presentations, teamwork, and business problem-solving.</p></div>
+<div class="project-grid"><article class="project" id="project-workplace-automation"><span class="tag">MGMT 431 · Python · Classroom prototype</span><h3>Workplace Automation: Overdue Tasks Report</h3><p>In my Future of Work course, I worked with a Python notebook that reads fictional task records, identifies open tasks with dates before September 17, 2026, and presents them in a readable report.</p><p><strong>Saved sample result:</strong> Five overdue open tasks were identified in the notebook output. This is a classroom exercise, not a live workplace tool.</p><details><summary>Explore the workflow and limitations</summary><p><strong>Input:</strong> A small CSV dataset containing task names, owners, due dates, and status.</p><p><strong>Rule:</strong> Select tasks marked open with a due date earlier than the reference date.</p><p><strong>Output:</strong> A list and formatted HTML report showing the overdue tasks.</p><p><strong>Limitation:</strong> The notebook includes mixed exercise inputs, including an expense dataset and a separate email-language stress-test sample. The saved overdue-task result does not demonstrate that those other cases were validated with the same rule.</p><p><strong>Learning:</strong> A useful automation needs a clear input, a specific rule, a readable report, and testing against realistic edge cases.</p></details></article><article class="project"><span class="tag">MGMT 431 · AI literacy</span><h3>Performance Review Language Analysis</h3><p>In class, I explored a fictional performance appraisal for a marketing coordinator and how AI-supported drafting and language review can help prepare a more specific, behavior-based manager conversation.</p><details><summary>What this exercise explores</summary><p>The workshop introduces a multi-agent workflow: organize review notes, draft an appraisal, check wording for possible bias, and prepare a manager conversation. An NLP scanner can look for word choices, trait versus action language, and specificity.</p><p><strong>Important limit:</strong> The uploaded materials explain the workflow but do not include my complete scanner outputs here. No measured bias finding or validated accuracy claim is presented.</p></details></article>
+<article class="project"><span class="tag">Operations</span><h3>Tesla Operations Management Analysis</h3><p>Coursework focused on operations management concepts using Tesla as a business context. The project involved research, analysis, teamwork, and communicating findings through a presentation.</p></article>
+<article class="project"><span class="tag">Quality Management</span><h3>IBM Quality Project</h3><p>A collaborative class project exploring quality-management concepts, including approaches such as Kaizen and Six Sigma. I contributed to the team's research and presentation work.</p></article>
+<article class="project"><span class="tag">Human Resources</span><h3>Amazon Employee Turnover Analysis</h3><p>Academic work examining employee turnover and HR-related issues in the context of Amazon. The project developed my research, writing, analysis, and teamwork experience.</p></article>
+
+<article class="project"><span class="tag">Hospitality</span><h3>Bellagio Company Research</h3><p>A class project researching Bellagio as a company, including its background and achievements, as part of a company-selection assignment.</p></article>
+<article class="project"><span class="tag">Future of Work</span><h3>AI &amp; the Workplace</h3><p>Course activities exploring how AI is changing work, future-ready skills, and the way managers may lead employees as technology becomes more common in organizations.</p></article>
+</div>
+</div>
+</section>
+<!-- Reusable portfolio project block: duplicate this section's article and use a unique id for future entries. -->
+
+<section id="skills">
+<div class="wrap">
+<div class="section-head"><div class="kicker">Strengths</div><h2>Skills &amp; interests</h2><p>Areas I have practiced through coursework, group projects, career preparation, and academic experiences.</p></div>
+<div class="skills-grid">
+<div class="skill">Research<small>Finding and organizing information</small></div>
+<div class="skill">Problem-Solving<small>Working through challenges step by step</small></div>
+<div class="skill">Teamwork<small>Collaborating toward shared goals</small></div>
+<div class="skill">Communication<small>Sharing ideas clearly with others</small></div>
+<div class="skill">Adaptability<small>Learning and adjusting to new situations</small></div>
+<div class="skill">Business Analysis<small>Connecting information to business decisions</small></div>
+<div class="skill">Leadership<small>An area I want to continue developing</small></div>
+<div class="skill">Finance &amp; Banking<small>Long-term professional interests</small></div>
+</div>
+</div>
+</section>
+<section class="projects" id="experience">
+<div class="wrap">
+<div class="section-head"><div class="kicker">Experience</div><h2>Learning beyond the classroom</h2></div>
+<div class="timeline">
+<div class="time-item"><div class="kicker">Career Development</div><h3>CSUF Business Career Fair</h3><p>Engaged with employers including Burlington Stores and Alliant Insurance Services while learning more about professional opportunities and networking.</p></div>
+
+<div class="time-item"><div class="kicker">Career Direction</div><h3>Banking &amp; Financial Services</h3><p>My long-term interests include banking and financial services, with the goal of continuing to develop my business knowledge, leadership abilities, and hands-on professional experience.</p></div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<div class="wrap">
+<div class="kicker" style="color:#fff">Contact</div>
+<h2>Let's connect.</h2>
+<p>This portfolio is a developing collection of my academic work, interests, and professional growth.</p>
+<div class="contact-note"><strong>Contact information placeholder</strong><br/>Professional contact details or a LinkedIn profile can be added here later.</div>
+</div>
+</section>
+</main>
+<footer>© 2026 Shafee Rahman • Personal Portfolio</footer>
+</body>
+</html>
